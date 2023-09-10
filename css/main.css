@@ -1,0 +1,25 @@
+:root {
+    --clr-main: #54B435;
+    --clr-white: #82CD47;
+    --clr-gray: #379237;
+    --clr-red: #F0FF42;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
+margin: 0;
+padding: 0;
+}
+
+ul {
+list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
