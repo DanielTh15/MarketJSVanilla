@@ -34,6 +34,7 @@ const productos = [{
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
+const tituloPrincipal = document.querySelector("titulo-princial");
 
 function cargarProductos(productos){
    contenedorProductos.innerHTML = ""; 
@@ -58,8 +59,14 @@ botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
      botonesCategorias.forEach(boton => boton.classList.remove("active"));
       e.currentTarget.classList.add("active");
-      const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id)
-      cargarProductos(productosBoton);
+      if(e.currentTarget.id != "todos"){
+        const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id)
+        cargarProductos(productosBoton);
+      } else {
+        tituloPrincipal.innerText = "Todos los productos";
+        cargarProductos(productos)
+      }
+      
 
     })
 })
